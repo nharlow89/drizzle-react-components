@@ -7,5 +7,5 @@ export {
   AccountData,
   ContractData,
   ContractForm,
-  LoadingContainer
+  LoadingContainer,
 }

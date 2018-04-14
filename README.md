@@ -1,5 +1,5 @@
 # drizzle-react-components
-A set of useful components for common UI elements.
+A set of useful components built on `drizzle-react`
 
 ## Components
 
@@ -19,11 +19,19 @@ This components wraps your entire app (but within the DrizzleProvider) and will 
 
 `methodArgs` (array) Arguments for the contract method call. EX: The address for an ERC20 balanceOf() function. The last argument can optionally be an options object with the typical from, gas and gasPrice keys.
 
-`hideIndicator` (boolean) If true, hides the loading indicator during contract state updates. Useful for things like ERC20 token symbols which do not change.
-
-`toUtf8` (boolean) Converts the return value to a UTF-8 string before display.
-
-`toAscii` (boolean) Converts the return value to an Ascii string before display.
+```js
+<ContractData contract="Escrow" method="getBalance">
+    {({initialized, loading, synced, data}) => {
+        if ( !initialized || loading )
+            return <div>Loading...</div>
+        // Format data as you wish
+        const formattedData = JSON.stringify(data, null, 4);
+        return (
+            <pre>{formattedData}</pre>
+        )
+    }}
+</ContractData>
+```
 
 ### ContractForm
 
