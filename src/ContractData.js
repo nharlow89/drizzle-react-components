@@ -13,7 +13,7 @@ class ContractData extends Component {
         method: PropTypes.string.isRequired,
         methodArgs: PropTypes.array,
         // drizzleConnect bound props
-        contracts: PropTypes.array.isRequired,
+        contracts: PropTypes.object.isRequired,
     };
     constructor(props, context) {
         super(props)
